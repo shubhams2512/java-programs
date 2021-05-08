@@ -1,0 +1,103 @@
+package reverse;
+import java.util.Scanner;
+public class Reverse {
+	class Node{
+		Node next;
+		int data;
+		public  Node(int data)
+		{
+			this.next=null;
+			this.data=data;
+		}
+		
+	}
+	public Node head=null;
+	public Node tail=null;
+	public void add(int data)
+	{
+		Node newNode=new Node(data);
+		if(head==null)
+		{
+			head=newNode;
+			tail=newNode;
+		}
+		else
+		{
+			tail.next=newNode;
+			tail=newNode;
+		}
+				
+	}
+	public void reverse()
+	{
+		Node current=head;
+		Node prev=null;
+		Node next;
+		while(current!=null)
+		{
+			next=current.next;
+			current.next=prev;
+			prev=current;
+			current=next;
+		}
+		head=prev;
+		
+	}
+	public void display()
+	{
+		Node temp=head;
+		while(temp!=null)
+		{
+			System.out.println(temp.data);
+			temp=temp.next;
+		}
+		
+	}
+	public void delete(int x)
+	{
+		Node temp=head;
+		Node temp2=head;
+		if(head.data==x)
+		{
+			temp=temp.next;
+			temp2=temp2.next;
+			head=temp;
+		}
+		else {
+		temp2=temp.next;
+		while(temp2!=null)
+		{
+			if(temp2.data==x)
+			{
+				temp2=temp2.next;
+				temp.next=temp2;
+			}
+			else
+			{
+				temp2=temp2.next;
+				temp=temp.next;
+			}
+		}
+	}
+	}
+		
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		Reverse rr=new Reverse();
+		for(int i=0;i<5;i++)
+		{
+			rr.add(sc.nextInt());
+		}
+	//	rr.display();
+		//rr.reverse();
+	System.out.println("--------------\n");
+		//rr.display();
+		rr.delete(1);
+		rr.delete(2);
+		rr.display();
+
+	}
+
+}
