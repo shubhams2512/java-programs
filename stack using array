@@ -52,12 +52,7 @@ public class Stack {
 	}
 
 }
-
-
-
-package stack;
-
-public class Main {
+ class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -67,11 +62,11 @@ public class Main {
 		st.push(3);
 		
 		st.display();
-		st.push(4);
+		//st.push(4);
 		//st.pop();st.pop();st.pop();st.pop();
-		st.display();
+		//st.display();
 	//	System.out.println(st.peek());
 
 	}
+	}
 
-}
