@@ -1,0 +1,59 @@
+package linkstack;
+
+public class Linkstack {
+	class Node
+	{
+		int data;
+		Node next;
+		public Node(int data)
+		{
+			this.next=null;
+			this.data=data;
+		}
+	}
+	public Node head=null;
+	public void push(int data)
+	{
+		Node newNode=new Node(data);
+		if(head==null)
+		{
+			head=newNode;
+		}
+		else
+		{
+			newNode.next=head;
+			head=newNode;
+		}
+		
+	}
+	public void pop()
+	{
+		Node temp=head;
+		temp=temp.next;
+		head=temp;
+	}
+	public void display()
+	{
+		Node temp=head;
+		while(temp!=null)
+		{
+			System.out.println(temp.data);
+			temp=temp.next;
+		}
+	}
+	
+
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		Linkstack ls=new Linkstack();
+		ls.push(1);
+		ls.push(2);
+		ls.push(3);
+		ls.pop();
+		ls.display();
+	}
+
+}
