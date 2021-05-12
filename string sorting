@@ -1,0 +1,103 @@
+/*c=ShUbHaM
+ * lw=3,up=4;
+ * S=hba,u=SUHM
+ * sort()
+ * s=abh,u=HMSU
+ * s.length=3,u.length=4;
+ * min=s.length,max=u.length;
+ *v=0
+ *while()
+ *v=6,upp=3,loww=3;
+ *condition
+ */
+/*John likes to play with string and he always tries to do something new with it. This time he found a very typical way to sort a string. 
+What he did is that he took a string composed of both lowercase and uppercase letters and sorted it in such a manner such that the uppercase and
+lowercase letter comes in an alternate manner but in sorted way.  He needs your help to complete this job as fast as possible.
+
+Example:
+Input: bAwutndekWEdkd
+
+Output: AbEdWddekkntuw
+*/
+
+package stringsort;
+import java.util.Scanner;
+import java.util.Arrays;
+public class Sortstring {
+	
+	public void resolve(String st){
+		//System.out.println("hello resolve");
+		char []c=st.toCharArray();
+		int lw=0,up=0;
+		for(int i=0;i<c.length;i++)
+		{
+			if(Character.isLowerCase(c[i]))
+			{
+				lw++;
+			}
+			else
+			{
+				up++;
+			}
+		}
+		char s[]=new char[lw];
+		char u[]=new char[up];
+		int p=0,q=0;
+		for(int i=0;i<c.length;i++)
+		{
+			if(Character.isLowerCase(c[i]))
+			{
+				s[p]=c[i];p++;
+			}
+			else
+			{
+				u[q]=c[i];q++;
+			}
+		}
+		Arrays.sort(s);//System.out.println(s);
+		Arrays.sort(u);//System.out.println(u);
+		int min,max;
+		if(s.length<=u.length)
+		{
+			min=s.length;
+			max=u.length;
+		}
+		else
+		{
+			min=u.length;
+			max=s.length;
+		}
+		char sum[]=new char[max+min];
+		int v=0;
+		int upp=0,loww=0;
+		while(upp<min && loww<min)
+		{
+			sum[v++]=u[upp];
+			sum[v++]=s[loww];
+			upp++;loww++;
+		}
+	
+		if(max==u.length)
+		{
+			while(upp<max) {
+			sum[v++]=u[upp];
+			upp++;}
+		}
+		if(max==s.length)
+		{while(loww<max) {
+			sum[v++]=s[loww];
+			loww++;}
+		}
+		System.out.println(sum);	
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Scanner sc = new Scanner(System.in);
+	System.out.println("enter string");
+	String str1=sc.nextLine();
+	Sortstring sr=new Sortstring();
+	sr.resolve(str1);
+
+	}
+
+}
