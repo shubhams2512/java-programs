@@ -1,0 +1,60 @@
+/*Write a java program to find the sum of factorial of the numbers in an array.  Consider the number for finding the factorial only if 
+it is positive and single digit.  If not print "No positive and single digit numbers found in an array".
+Sample Input 1:
+
+Enter the size of an array:
+
+5
+
+Enter the elements:
+
+2
+
+-56
+
+-13
+
+6
+
+56
+
+Sample Output 1:
+
+722
+*/
+
+
+package tractor;
+import java.util.*;
+import java.util.Scanner;
+
+public class Tractor {
+	
+	public int calculate(int k)
+	{
+		if(k<=1)
+			return k;
+		else
+			return (k*calculate(k-1));
+	}
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+		Tractor tr=new Tractor();
+		int sum=0;
+		for(int i=0;i<n;i++)
+		{if(arr[i]>0)
+			{
+			sum+=tr.calculate(arr[i]);
+			}
+		}
+		System.out.println(sum);
+	}
+}
+		
