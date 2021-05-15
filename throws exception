@@ -1,0 +1,37 @@
+package tractor;
+import java.util.*;
+import java.util.Scanner;
+public class Tractor {
+	
+public static int divide(int a,int b)throws ArithmeticException
+		{
+			int ans;
+			try {
+				if(b==0)
+				{
+					throw new ArithmeticException("no");
+				}
+				ans=a/b;
+				return ans;
+				}
+			finally {
+				System.out.println("done");
+			}
+		}
+public static void main(String[] args)
+{
+	try {int result=divide(100,0);
+	//result=divide(100,2);
+	System.out.println(result);
+		
+	} catch (ArithmeticException e) {
+		System.out.println("exception occured");
+	}
+	
+		
+			
+			
+	
+
+	}}
+		
