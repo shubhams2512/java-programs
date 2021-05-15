@@ -1,0 +1,41 @@
+package tractor;
+import java.util.*;
+import java.util.Scanner;
+public class Tractor {
+	
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		
+	String str=sc.nextLine();
+	switch(str)
+	{
+	case "Ladies":
+	{
+		System.out.println("1");break;
+	}
+	case "Kids":
+	{
+		System.out.println("2");break;
+	}
+
+	case "Girls":
+	{
+		System.out.println("3");break;
+	}
+
+	case "Boys":
+	{
+		System.out.println("4");break;
+	}
+	case "Gents":
+	{
+		System.out.println("5");break;
+	}
+	default:
+	{
+		System.out.println("No matches found");break;
+	}	
+}
+}}
+		
