@@ -1,0 +1,37 @@
+package tractor;
+import java.util.*;
+import java.util.Scanner;
+public class Tractor {
+	
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		int arr[]= {10,20,30};
+		int res;
+		int n1=sc.nextInt();
+		int n2=sc.nextInt();
+		try {
+			res=n1/n2;
+			System.out.println("result is "+res);
+		
+			for(int i=0;i<4;i++)
+			{
+				System.out.println(arr[i]);
+			}
+	}
+		catch(ArithmeticException e)
+		{
+			System.out.println("number cant be devided by zero");
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("out of bounds");
+		}
+		finally {System.out.println("operations done");
+			
+		}
+			
+	
+
+	}}
+		
