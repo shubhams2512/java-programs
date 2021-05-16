@@ -1,0 +1,28 @@
+package tractor;
+import java.util.*;
+import java.util.Scanner;
+public class Tractor {
+	
+
+public static void main(String[] args)
+{
+	Scanner sc=new Scanner(System.in);
+//int str=sc.nextLine();
+	
+	try {
+		int x=sc.nextInt();
+		int n=sc.nextInt();
+		if(n==(int)n && x==(int)x )
+		{System.out.println("answer is"+(x/n));}
+	}
+	catch(InputMismatchException e)
+	{
+		System.out.println("input should be a number");
+	}
+	catch(ArithmeticException e)
+	{
+		System.out.println("divided by zero ");
+	}
+	
+	}}
+		
